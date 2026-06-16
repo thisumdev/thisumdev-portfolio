@@ -6,7 +6,18 @@ import {
   Sparkles,
 } from "lucide-react";
 
-export default function ProjectCard({ project, index }) {
+export default function ProjectCard({ project, index, onOpenGallery }) {
+  const firstGalleryImage = project.images?.[0];
+
+  const coverImage =
+    project.coverImage || project.image || firstGalleryImage?.src || null;
+
+  const coverAlt =
+    project.imageLabel ||
+    firstGalleryImage?.alt ||
+    firstGalleryImage?.label ||
+    project.title;
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 28, scale: 0.97 }}
@@ -24,10 +35,10 @@ export default function ProjectCard({ project, index }) {
       <div className="project-card-grid" />
 
       <div className="project-image-shell">
-        {project.image ? (
+        {coverImage ? (
           <img
-            src={project.image}
-            alt={project.imageLabel || project.title}
+            src={coverImage}
+            alt={coverAlt}
             className="project-image"
             loading="lazy"
           />
@@ -93,13 +104,18 @@ export default function ProjectCard({ project, index }) {
         <div className="mt-7 flex items-center justify-between border-t border-white/8 pt-5">
           <span className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-slate-500">
             <Layers3 size={14} />
-            Featured Work
+            Gallery Ready
           </span>
 
-          <span className="project-view-cue">
+          <button
+            type="button"
+            className="project-view-cue"
+            onClick={() => onOpenGallery?.(project)}
+            aria-label={`View ${project.title} case study gallery`}
+          >
             View Case Study
             <ArrowUpRight size={16} />
-          </span>
+          </button>
         </div>
       </div>
     </motion.article>

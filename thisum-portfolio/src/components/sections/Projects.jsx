@@ -1,9 +1,13 @@
-import { motion } from "motion/react";
+import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import { Sparkles, FolderKanban } from "lucide-react";
 import { projects } from "../../data/projects";
 import ProjectCard from "../ui/ProjectCard";
+import ProjectGallery from "../ui/ProjectGallery";
 
 export default function Projects() {
+  const [selectedProject, setSelectedProject] = useState(null);
+
   const featuredProjects = projects.filter((project) => project.featured);
   const otherProjects = projects.filter((project) => !project.featured);
 
@@ -39,7 +43,12 @@ export default function Projects() {
 
         <div className="mt-14 grid gap-6 xl:grid-cols-2">
           {featuredProjects.map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} />
+            <ProjectCard
+              key={project.title}
+              project={project}
+              index={index}
+              onOpenGallery={setSelectedProject}
+            />
           ))}
         </div>
 
@@ -73,10 +82,20 @@ export default function Projects() {
               key={project.title}
               project={project}
               index={featuredProjects.length + index}
+              onOpenGallery={setSelectedProject}
             />
           ))}
         </div>
       </div>
+
+      <AnimatePresence>
+        {selectedProject && (
+          <ProjectGallery
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 }

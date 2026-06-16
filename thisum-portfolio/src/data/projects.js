@@ -3,8 +3,29 @@ export const projects = [
     title: "Smart Campus Operations Hub",
     category: "Collaborative Project",
     role: "Team Lead / Security Module",
-    image: "/projects/smart-campus.jpg",
+
+    image: "/projects/smart-campus.png",
+    github:
+      "https://github.com/thisumdev/it3030-paf-2026-smart-campus-group171",
+
     imageLabel: "Smart Campus Dashboard",
+
+    images: [
+      {
+        src: "/projects/smart-campus.png",
+        label: "Smart Campus dashboard",
+        alt: "Smart Campus Operations Hub dashboard preview",
+        caption: "Main dashboard preview of the Smart Campus Operations Hub.",
+      },
+      // Add more images like this:
+      // {
+      //   src: "/projects/smart-campus-auth.png",
+      //   label: "Authentication screen",
+      //   alt: "Smart Campus authentication screen",
+      //   caption: "Secure login and access-control workflow.",
+      // },
+    ],
+
     description:
       "A modern campus operations platform built to support structured workflows, secure access control and role-based digital services.",
     highlights: [
@@ -29,8 +50,22 @@ export const projects = [
     title: "Weather Station Data Cleaning & Imputation Web App",
     category: "Individual Project",
     role: "Full-Stack Developer",
-    image: "/projects/weather-cleaning.jpg",
+
+    image: "/projects/weather-cleaning.png",
+    github: "https://github.com/thisumdev/ACCIMT-weather-data-cleaning-app",
+
     imageLabel: "Weather Analytics Interface",
+
+    images: [
+      {
+        src: "/projects/weather-cleaning.png",
+        label: "Weather analytics interface",
+        alt: "Weather station data cleaning and imputation web app interface",
+        caption:
+          "Interface for uploading, cleaning, imputing and exporting weather-station datasets.",
+      },
+    ],
+
     description:
       "A full-stack web application for uploading raw weather-station Excel files and producing cleaned, imputed and analysis-ready outputs.",
     highlights: [
@@ -54,8 +89,21 @@ export const projects = [
     title: "AutoFiks",
     category: "Collaborative Project",
     role: "Full-Stack Contributor",
+
     image: "/projects/autofiks.jpg",
+    github: "https://github.com/milindasandaru/AutoFiks-ITP-Project",
+
     imageLabel: "Vehicle Service Platform",
+
+    images: [
+      {
+        src: "/projects/autofiks.jpg",
+        label: "AutoFiks platform",
+        alt: "AutoFiks vehicle service and spare parts management system",
+        caption: "Vehicle service and spare-parts management workflow preview.",
+      },
+    ],
+
     description:
       "A real-world client-oriented vehicle service and spare-parts management system for streamlining service bookings and operational tracking.",
     highlights: [
@@ -77,8 +125,22 @@ export const projects = [
     title: "MovieRazzi",
     category: "Collaborative Project",
     role: "Team Lead / NLP Agent",
+
     image: "/projects/movierazzi.jpg",
+    github: "https://github.com/thisumdev/movierazzi-movie-planner",
+
     imageLabel: "AI Movie Planner",
+
+    images: [
+      {
+        src: "/projects/movierazzi.jpg",
+        label: "MovieRazzi interface",
+        alt: "MovieRazzi intelligent movie night planner interface",
+        caption:
+          "AI/NLP-supported movie night planning and recommendation experience.",
+      },
+    ],
+
     description:
       "An intelligent movie night planning application using AI, LLM and NLP concepts to analyze user preferences and support personalized planning.",
     highlights: [
