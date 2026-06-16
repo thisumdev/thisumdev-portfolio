@@ -2,8 +2,8 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Sparkles, FolderKanban } from "lucide-react";
 import { projects } from "../../data/projects";
-import ProjectCard from "../ui/ProjectCard";
-import ProjectGallery from "../ui/ProjectGallery";
+import ProjectCard from "../UI/ProjectCard";
+import ProjectGallery from "../UI/ProjectGallery";
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);

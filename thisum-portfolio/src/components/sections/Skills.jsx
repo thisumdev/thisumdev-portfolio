@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Sparkles, Layers3, ArrowUpRight } from "lucide-react";
 import { skillGroups } from "../../data/skills";
-import SkillBadge from "../ui/SkillBadge";
+import SkillBadge from "../UI/SkillBadge";
 
 export default function Skills() {
   return (
